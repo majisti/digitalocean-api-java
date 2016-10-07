@@ -6,3 +6,7 @@
 *.ear
 
 target/
+
+# IntelliJ IDEA
+.idea
+*.iml

@@ -96,6 +96,9 @@ public class Droplet extends RateLimitBase {
     return ReflectionToStringBuilder.toString(this);
   }
 
+  @SerializedName("volume")
+  private List<String> volumes;
+
   /**
    * @return true if droplet is active
    */
@@ -432,4 +435,13 @@ public class Droplet extends RateLimitBase {
     this.userData = userData;
   }
 
+  /**
+   * @return the volumes
+   */
+  public List<String> getVolumes() { return volumes; }
+
+  /**
+   * @param volumes The volumes
+   */
+  public void setVolumes(List<String> volumes) { this.volumes = volumes; }
 }
