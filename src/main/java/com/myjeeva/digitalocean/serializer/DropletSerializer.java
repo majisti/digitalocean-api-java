@@ -56,6 +56,14 @@ public class DropletSerializer implements JsonSerializer<Droplet> {
       jsonObject.add("names", names);
     }
 
+    if (null != droplet.getVolumes() && droplet.getVolumes().size() > 0) {
+      JsonArray volumes = new JsonArray();
+      for (String volume : droplet.getVolumes()) {
+        volumes.add(context.serialize(volume));
+      }
+      jsonObject.add("volumes", volumes);
+    }
+
     jsonObject.addProperty("region", droplet.getRegion().getSlug());
     jsonObject.addProperty("size", droplet.getSize());
 
