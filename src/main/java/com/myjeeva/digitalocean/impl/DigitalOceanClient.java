@@ -1439,6 +1439,8 @@ public class DigitalOceanClient implements DigitalOcean, Constants {
     if (null != request.getData()) {
       String inputData = serialize.toJson(request.getData());
 
+      LOG.info("Json data: " + inputData);
+
       try {
         data = new StringEntity(inputData);
       } catch (UnsupportedEncodingException e) {
